@@ -11,14 +11,14 @@
  
  void shell_sort(int *array, size_t size) {
     size_t interval = 1;
-  int a;
+  size_t j, a;
     while (interval <= size / 3) {
         interval = interval * 3 + 1;
     }
     while (interval > 0) {
         for (a = interval; a < size; a++) {
             int temp = array[a];
-            int j;
+            
             for (j = a; j >= interval && array[j - interval] > temp; j -= interval) {
                 array[j] = array[j - interval];
             }
